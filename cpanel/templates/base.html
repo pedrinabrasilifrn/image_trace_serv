@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon/favicon.ico'%}" rel="shortcut icon" type="image/x-icon">
+    <link href="{% static 'img/favicon/apple-touch-icon.png'%}" rel="apple-touch-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    
+    <!-- Personalizado -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <title>Image Trance</title>
+  </head>
+  <body>
+    <header>
+        <div class="container bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark  py-0 ">
+                <a class="navbar-brand  py-0" href="#">
+                    Image - Trance
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'cpanel:index' %}">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">O Projeto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Colaboradores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Entrar</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            {% block content %} {% endblock %}     
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-5 d-flex align-items-center">
+                   
+                    <img src="img/logo.png" alt="" height="60"/>     
+                     
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="text-muted" href="#">
+                            <i class="fab fa-instagram fa-lg-2"></i>
+                        </a>
+                    </li>
+                   
+                    <li class="ms-3">
+                        <a class="text-muted" href="#">
+                            <i class="fab fa-twitter fa-lg-2"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="text-muted" href="#">
+                            <i class="fab fa-facebook fa-lg-2"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="text-muted" href="#">
+                            <i class="fab fa-youtube fa-lg-2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/94b924ac3c.js" crossorigin="anonymous"></script>
+
+    <script>
+        
+        {% block myscript %} {% endblock %}
+        
+    </script>
+  </body>
+</html>

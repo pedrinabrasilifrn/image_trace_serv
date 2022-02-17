@@ -1,0 +1,161 @@
+body{
+    overflow-x: hidden ;
+}
+.bg-green{
+    background-color: #15661d;
+}
+
+header .navbar-toggler[aria-expanded=true]{
+    margin: 12px 0px;
+    transition: all 0.3s;
+}
+
+header .navbar-nav{
+    align-items: stretch;
+}
+
+#mainMenu.navbar-collapse{
+    padding-left: 10px;
+    transition: all 0.3s;
+    min-height: 70px;
+    align-items: stretch;
+    float: right !important;
+    justify-content: end;
+}
+
+header .navbar-collapse .nav-item{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 80px;
+    max-width: 150px;
+    text-align: center;
+    border-left: 0.01em solid rgba(0,0,0,0.1);
+}
+
+.nav-item:last-child{
+    border-right: 0.01em solid rgba(0,0,0,0.1);
+}
+
+.nav-item:hover {
+    box-shadow: 0px 4px 1px -1px #66bb6a;
+}
+
+a.nav-link{
+    color:#fff !important;
+    width: 100%;
+}
+a.nav-link{
+    color:#fff !important;
+    width: 100%;
+}
+
+a.nav-link:hover, a.nav-link:active, a.nav-link.active{
+    color: #66bb6a !important;
+}
+
+#topo{
+    background-image: url("../img/bg-topo_.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 5px solid #66bb6a;
+}
+
+.h1, h1 {
+    font-size: 2.2rem;
+}
+.max-width{
+    width: 100%;
+}
+.fa-lg-2 {
+    font-size: 2.33333em;
+    line-height: 1.75em !important;
+    vertical-align: -1.0667em;
+}
+
+.icone{
+    padding-left: 0.5px;
+    padding-right: 0px;
+}
+.icone a{
+    transition: all 0.5s;
+}
+
+.btn-light{
+    border: 1px solid  #79807a44;
+}
+.icone a:hover, .icone a.active{
+    background-color: #15661d;
+    border: 1px solid  #79807a44;
+    color: #fff;
+    
+}
+
+#featuredMenu{
+    margin-top: -100px;;
+}
+
+#main aside{
+    border-right: 1px solid #79807a44;
+    
+}
+
+#menu-lateral{
+    list-style: none;
+}
+#menu-lateral li{
+    border-bottom: 0px !important; 
+ }
+ 
+ .list-group-item.active {
+    z-index: 2; 
+    color: #fff; 
+    background-color: #347B3E; 
+    border-color: none; 
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .5rem 1rem;
+    color: #347B3E;
+    text-decoration: none;
+    background-color: #E8FBE7;
+    border: none;
+    margin: 1px;
+    text-align: inherit;
+}
+
+.list-group-item:hover{
+    background-color: beige;
+    color: #a50618;
+} 
+@media (max-width: 991.98px) {
+    header .navbar-collapse .nav-item{
+        max-width: none;
+        border: 0px;
+        font-size: 1.2em;
+    }
+    .nav-item:hover {
+        box-shadow: 0px 2px 1px -1px #66bb6a;
+    } 
+    #main aside{
+        border-right: 0px;
+        
+    }
+   
+}
+
+@media (max-width: 576px), (max-width: 767.98px) {
+    #featuredMenu{
+        margin-top: 0px;
+    }
+    
+    #topo {
+        background-size: auto;
+        background-position: inherit;
+    }
+}

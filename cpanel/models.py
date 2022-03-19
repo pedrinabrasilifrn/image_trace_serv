@@ -28,16 +28,16 @@ class Quest(models.Model):
     speed = models.IntegerField("Velocidade", default= 1)
     noise = models.BooleanField("Com ruido", default= False)
     upsidedown = models.BooleanField("Invertido", default= False)
-    module = models.ForeignKey(Module, null=True, on_delete=models.PROTECT, related_name='resets')
+    module = models.ForeignKey(Module, verbose_name="Bloco", null=True, on_delete=models.PROTECT, related_name='resets')
     
-    LEVEL_CHOICES = (
+    '''LEVEL_CHOICES = (
         ('F', 'Fácil'),
         ('N', 'Normal'),
         ('D', 'Difícil')
     )
     
     level = models.CharField("Nível de Dificuldade:", max_length=1, choices=LEVEL_CHOICES, default='F')
-    
+    '''
     videofile = models.FileField("Arquivo txt do vídeo", upload_to='quests/%Y/%m/%d')
  
     created = models.DateTimeField("Cadastrado", auto_now_add=True)

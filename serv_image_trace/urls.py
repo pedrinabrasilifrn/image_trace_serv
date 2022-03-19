@@ -21,4 +21,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include("cpanel.urls", namespace="cpanel")),    
     path('admin/', admin.site.urls, name="admin"),
+    path('api/', include("api.urls"), name="api")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

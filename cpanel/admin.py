@@ -12,10 +12,11 @@ class ModuleAdmin(admin.ModelAdmin):
 class QuestAdmin(admin.ModelAdmin):
     list_display = ("id", "name","txt", "created", "updated")
     exclude = []
-    form = QuestForm
+    form = QuestForm  
 
 @admin.register(Experiment)
 class ExperimentAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "created", "updated")
     exclude = []
     form = ExperimentForm
+    

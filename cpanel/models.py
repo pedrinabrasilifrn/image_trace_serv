@@ -22,11 +22,13 @@ class Module(models.Model):
 class Quest(models.Model):
     name = models.CharField("Título do Vídeo",  null=False, blank=False, max_length=100, default="Movimento do Vídeo")
     txt = models.TextField("Orientação", null=False, blank=False)
-    timer = models.IntegerField("Segundos", null=False, blank= False, default= 4)
+    timer = models.IntegerField("Tempo em segundos", null=False, blank= False, default= 4)
     correct_op = models.CharField("Opção Correta",  null=False, blank=False,max_length=100)
     wrong_op = models.CharField("Opção Incorreta",  null=False, blank=False, max_length=100)
-    
-    module = models.ForeignKey(Module, on_delete=models.PROTECT, related_name='resets')
+    speed = models.IntegerField("Velocidade", default= 1)
+    noise = models.BooleanField("Com ruido", default= False)
+    upsidedown = models.BooleanField("Invertido", default= False)
+    module = models.ForeignKey(Module, null=True, on_delete=models.PROTECT, related_name='resets')
     
     LEVEL_CHOICES = (
         ('F', 'Fácil'),
@@ -40,7 +42,7 @@ class Quest(models.Model):
  
     created = models.DateTimeField("Cadastrado", auto_now_add=True)
     updated = models.DateTimeField("Atualizado", auto_now=True)
-    
+
     class Meta:
         verbose_name = 'Vídeo'
         verbose_name_plural= 'Vídeos'
@@ -52,10 +54,9 @@ class Quest(models.Model):
 # Create your models here.
 class Experiment(models.Model):
     title = models.TextField("Título",  null=False, blank=False, max_length=255)
-    quests = models.ManyToManyField(Quest)
     created = models.DateTimeField("Cadastrado", auto_now_add=True)
     updated = models.DateTimeField("Atualizado", auto_now=True)
-    
+    quests = models.ManyToManyField(Quest, verbose_name="Vídeos")
     class Meta:
         verbose_name = 'Experimento'
         verbose_name_plural= 'Experimentos'

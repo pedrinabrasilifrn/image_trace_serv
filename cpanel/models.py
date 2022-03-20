@@ -25,7 +25,12 @@ class Quest(models.Model):
     timer = models.IntegerField("Tempo em segundos", null=False, blank= False, default= 4)
     correct_op = models.CharField("Opção Correta",  null=False, blank=False,max_length=100)
     wrong_op = models.CharField("Opção Incorreta",  null=False, blank=False, max_length=100)
-    speed = models.IntegerField("Velocidade", default= 1)
+    SPEED_CHOICES = (
+        ('F', 'Rápido'),
+        ('N', 'Normal'),
+        ('S', 'Lento')
+    )
+    speed = models.CharField("Velocidade", choices=SPEED_CHOICES, default='N', max_length=1)
     noise = models.BooleanField("Com ruido", default= False)
     upsidedown = models.BooleanField("Invertido", default= False)
     module = models.ForeignKey(Module, verbose_name="Bloco", null=True, on_delete=models.PROTECT, related_name='resets')

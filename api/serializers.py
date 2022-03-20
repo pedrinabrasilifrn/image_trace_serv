@@ -15,7 +15,7 @@ class QuestSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'txt', 'timer', 'correct_op', 'wrong_op', 'speed', 'noise', 'upsidedown', 'videofile']
 
 class ExperimentSerializer(serializers.ModelSerializer):
-    #quests = QuestSerializer(read_only=True, many=True)
+    quests = QuestSerializer(read_only=True, many=True)
     class Meta:
         model = Experiment
-        fields = ['id','title']
+        fields = ['id','title', 'quests']

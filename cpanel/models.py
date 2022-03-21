@@ -23,8 +23,12 @@ class Quest(models.Model):
     name = models.CharField("Título do Vídeo",  null=False, blank=False, max_length=100, default="Movimento do Vídeo")
     txt = models.TextField("Orientação", null=False, blank=False)
     timer = models.IntegerField("Tempo em segundos", null=False, blank= False, default= 4)
-    correct_op = models.CharField("Opção Correta",  null=False, blank=False,max_length=100)
-    wrong_op = models.CharField("Opção Incorreta",  null=False, blank=False, max_length=100)
+    OPTION_CHOICES = (
+        ('1', 'Verde'),
+        ('2', 'Vermelho')
+    )
+    correct_op = models.CharField("Correta", null=False, blank=False, choices=OPTION_CHOICES, default='1', max_length=1)
+    wrong_op = models.CharField("Incorreta", null=False, blank=False, choices=OPTION_CHOICES, default='2', max_length=1)
     SPEED_CHOICES = (
         ('F', 'Rápido'),
         ('N', 'Normal'),

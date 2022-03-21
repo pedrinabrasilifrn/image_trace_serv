@@ -28,7 +28,7 @@ class Quest(models.Model):
         ('2', 'Vermelho')
     )
     correct_op = models.CharField("Correta", null=False, blank=False, choices=OPTION_CHOICES, default='1', max_length=1)
-    wrong_op = models.CharField("Incorreta", null=False, blank=False, choices=OPTION_CHOICES, default='2', max_length=1)
+    wrong_op = models.CharField("Incorreta", null=True, blank=True, choices=OPTION_CHOICES, max_length=1)
     SPEED_CHOICES = (
         ('F', 'Rápido'),
         ('N', 'Normal'),

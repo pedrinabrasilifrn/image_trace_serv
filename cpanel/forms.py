@@ -17,6 +17,7 @@ class QuestForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Descreva o movimento do vídeo','minlength': 3, 'maxlength': 255}),
             'txt': forms.Textarea(attrs={'rows':4, 'cols':100}),
+            'wrong_op' : forms.HiddenInput(),
         }
 
 

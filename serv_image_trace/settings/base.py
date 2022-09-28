@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'imagetrace',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'USER': 'adminbd',
+        'USER': 'userdjango',
         'PASSWORD': '4dm1nbd',
     }
 }
